@@ -6,7 +6,7 @@ ln -sf "$PWD/nvim" "$XDG_CONFIG_HOME"/nvim
 
 ln -sf "$PWD/.zshrc" "$HOME"/.zshrc
 ln -sf "$PWD/.tmux.conf" "$HOME"/.tmux.conf
-
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 packages=(
 	fd
 	ripgrep
