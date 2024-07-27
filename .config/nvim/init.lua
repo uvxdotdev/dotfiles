@@ -92,7 +92,8 @@ vim.g.maplocalleader = ' '
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-vim.opt_local.tabstop = 4
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
 
 vim.opt.conceallevel = 1
 
@@ -619,6 +620,12 @@ require('lazy').setup({
             'tf',
           },
         },
+
+        clangd = {
+          filetypes = {
+            'cpp',
+          },
+        },
       }
 
       -- Ensure the servers and tools above are installed
@@ -641,6 +648,8 @@ require('lazy').setup({
         'tailwindcss-language-server',
         'eslint-lsp',
         'prettierd',
+        'clangd',
+        'clang-format',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -682,7 +691,7 @@ require('lazy').setup({
         -- is found.
         javascript = { { 'prettierd' } },
         rust = { 'rustfmt' },
-
+        cpp = { 'clang-format' },
         terraform = { 'terraformfmt' },
       },
     },
@@ -788,6 +797,7 @@ require('lazy').setup({
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },
+          { name = 'supermaven' },
         },
       }
     end,
@@ -800,6 +810,9 @@ require('lazy').setup({
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
     'folke/tokyonight.nvim',
     priority = 1000, -- Make sure to load this before all the other start plugins.
+    opts = {
+      transparent = true,
+    },
     init = function()
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
@@ -816,6 +829,7 @@ require('lazy').setup({
 
   { -- Collection of various small independent plugins/modules
     'echasnovski/mini.nvim',
+
     config = function()
       -- Better Around/Inside textobjects
       --
@@ -922,7 +936,9 @@ require('lazy').setup({
     },
   },
 })
-
+vim.api.nvim_set_hl(0, 'LineNrAbove', { fg = '#43A784', bold = true })
+vim.api.nvim_set_hl(0, 'LineNr', { fg = '#43A784', bold = true })
+vim.api.nvim_set_hl(0, 'LineNrBelow', { fg = '#43A784', bold = true })
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
 
@@ -1017,3 +1033,6 @@ vim.api.nvim_set_hl(0, 'ItalicYellow', { fg = '#fae3b0', italic = true })
 vim.api.nvim_set_hl(0, 'H1', { fg = '#f38ba8' })
 
 --[[ vim.cmd.colorscheme 'catppuccin-mocha' ]]
+require('transparent').clear_prefix 'BufferLine'
+vim.g.transparent_enabled = true
+-- require('transparent').clear_prefix 'lualine'
