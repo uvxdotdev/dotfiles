@@ -32,7 +32,7 @@ ln -sf "$PWD/.zshrc" "$HOME"/.zshrc
 cargo install fd
 cargo install ripgrep
 cargo install eza
-curl -sS https://starship.rs/install.sh | sh
+cargo install starship
 sudo apt install npm -y
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -43,9 +43,10 @@ curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/lates
 tar xf lazygit.tar.gz lazygit
 sudo install lazygit /usr/local/bin
 
-
+cargo install zoxide
 
 
 echo "All packages from the setup script have been installed."
 chsh -s $(which zsh)
+zsh
 exit
