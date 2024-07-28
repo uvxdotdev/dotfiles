@@ -551,21 +551,21 @@ require('lazy').setup({
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         -- clangd = {},
-        gopls = {
-          filetypes = {
-            'go',
-            'gomod',
-            'gowork',
-            'gotmpl',
-          },
-          root_dir = require('lspconfig.util').root_pattern('go.work', 'go.mod', '.git'),
-          settings = {
-            gopls = {
-              completeUnimported = true,
-              usePlaceholders = true,
-            },
-          },
-        },
+        -- gopls = {
+        --   filetypes = {
+        --     'go',
+        --     'gomod',
+        --     'gowork',
+        --     'gotmpl',
+        --   },
+        --   root_dir = require('lspconfig.util').root_pattern('go.work', 'go.mod', '.git'),
+        --   settings = {
+        --     gopls = {
+        --       completeUnimported = true,
+        --       usePlaceholders = true,
+        --     },
+        --   },
+        -- },
         pyright = {
           root_dir = require('lspconfig.util').root_pattern('venv', 'env'),
           settings = {
@@ -596,9 +596,9 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        tsserver = {},
-        tailwindcss = {},
-        eslint = {},
+        -- tsserver = {},
+        -- tailwindcss = {},
+        -- eslint = {},
 
         lua_ls = {
           -- cmd = {...},
@@ -615,18 +615,18 @@ require('lazy').setup({
           },
         },
 
-        terraformls = {
-          filetypes = {
-            'tf',
-          },
-        },
+        -- terraformls = {
+        --   filetypes = {
+        --     'tf',
+        --   },
+        -- },
 
-        clangd = {
-          filetypes = {
-            'cpp',
-          },
-        },
-      }
+      --   clangd = {
+      --     filetypes = {
+      --       'cpp',
+      --     },
+      --   },
+      -- }
 
       -- Ensure the servers and tools above are installed
       --  To check the current status of installed tools and/or manually install
