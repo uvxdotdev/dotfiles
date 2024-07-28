@@ -230,5 +230,5 @@ return {
 		{ key = "]", mods = "CTRL", action = wezterm.action.RotatePanes("Clockwise") },
 	},
 	font_size = 14,
-	font = wezterm.font("ZeroCode"),
+	font = wezterm.font("FiraCode Nerd Font"),
 }

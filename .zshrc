@@ -50,10 +50,10 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 
-alias ls="exa --icons --all"
+alias ls="eza --icons --all"
 alias lg="lazygit"
 alias nv="nvim"
-alias notes="cd /Users/utkarshverma/Desktop/Main && nvim ."
+alias notes="cd /Users/utkarshverma/Library/Mobile Documents/iCloud~md~obsidian/Documents/Main && nvim ."
 alias v="fd --type f --hidden --exclude .git | fzf-tmux -p| xargs nvim"
 alias cdx='cd $(fd --type directory | fzf -i)'
 # alias act='if [ -d "venv" ]; then source ./venv/bin/activate && echo "Virtual environment activated."; else echo "Virtual environment not found."; fi'

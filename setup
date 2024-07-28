@@ -5,28 +5,44 @@ mkdir -p "$XDG_CONFIG_HOME"
 ln -sf "$PWD/.config/nvim" "$XDG_CONFIG_HOME"/nvim
 
 ln -sf "$PWD/.zshrc" "$HOME"/.zshrc
-ln -sf "$PWD/.tmux.conf" "$HOME"/.tmux.conf
 
 
-echo "Install brew"
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-echo "Brew installed"
-packages=(
-	fd
-	ripgrep
-	exa
-	npm
-	starship
-	lazygit
-	kubectl
-	derailed/k9s/k9s
-	brew install fluxcd/tap/flux
-)
+# echo "Install brew"
+# bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# echo "Brew installed"
+ 
+# packages=(
+# 	fd
+# 	ripgrep
+# 	eza
+# 	npm
+# 	starship
+# 	lazygit
+# 	kubectl
+# 	derailed/k9s/k9s
+# 	brew install fluxcd/tap/flux
+# )
 
-for package in "${packages[@]}"; do
-	echo "Installing $package..."
-	/home/linuxbrew/.linuxbrew/bin/brew install "$package"
-done
+# for package in "${packages[@]}"; do
+# 	echo "Installing $package..."
+# 	/home/linuxbrew/.linuxbrew/bin/brew install "$package"
+# done
+
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+cargo install fd
+cargo install ripgrep
+cargo install eza
+curl -sS https://starship.rs/install.sh | sh
+sudo apt install npm -y
+
+
+LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+tar xf lazygit.tar.gz lazygit
+sudo install lazygit /usr/local/bin
+
+
+
 
 echo "All packages from the setup script have been installed."
 chsh -s $(which zsh)
