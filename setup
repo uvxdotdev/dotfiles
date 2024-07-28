@@ -28,13 +28,15 @@ ln -sf "$PWD/.zshrc" "$HOME"/.zshrc
 # 	/home/linuxbrew/.linuxbrew/bin/brew install "$package"
 # done
 
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+# curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 cargo install fd
 cargo install ripgrep
 cargo install eza
 curl -sS https://starship.rs/install.sh | sh
 sudo apt install npm -y
 
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
 
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
 curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
@@ -46,3 +48,4 @@ sudo install lazygit /usr/local/bin
 
 echo "All packages from the setup script have been installed."
 chsh -s $(which zsh)
+exit
