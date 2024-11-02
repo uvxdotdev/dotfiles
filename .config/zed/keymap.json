@@ -1,0 +1,64 @@
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "shift shift": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      // "j k": ["workspace::SendKeystrokes", "escape"]
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      // Put key bindings here if you want them to work in normal & visual mode.
+    }
+  },
+  {
+    "context": "vim_mode == normal && !menu",
+    "bindings": {
+      // "shift-y": ["workspace::SendKeystrokes", "y $"] // Use neovim's yank behavior: yank to end of line.
+      "tab": "pane::ActivateNextItem",
+      "shift-tab": "pane::ActivatePrevItem",
+      "space s f": "file_finder::Toggle",
+      "ctrl-space \\": "pane::SplitLeft",
+      "ctrl-space -": "pane::SplitDown",
+      "ctrl-space x": "pane::CloseAllItems",
+      "space e": "workspace::ToggleLeftDock",
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-y": "editor::AcceptPartialInlineCompletion",
+      "ctrl-shift-y": "editor::AcceptInlineCompletion",
+      "ctrl-;": "editor::ShowInlineCompletion"
+    }
+  },
+  {
+    "context": "vim_mode == insert",
+    "bindings": {
+      "j k": "vim::NormalBefore", // In insert mode, make jk escape to normal mode.
+      "j j": "vim::NormalBefore", // In insert mode, make jj escape to normal mode.
+      "ctrl-y": "editor::ConfirmCompletion",
+      "ctrl-shift-y": "editor::AcceptInlineCompletion",
+      "ctrl-;": "editor::ShowInlineCompletion"
+    }
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "space e": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    "context": "EmptyPane || SharedScreen",
+    "bindings": {
+      // Put key bindings here (in addition to the context above) if you want them to
+      // work when no editor exists.
+      // "space f": "file_finder::Toggle"
+    }
+  }
+]

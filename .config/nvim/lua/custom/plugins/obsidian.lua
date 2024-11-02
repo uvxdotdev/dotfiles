@@ -30,7 +30,7 @@ return {
     workspaces = {
       {
         name = 'Main',
-        path = '~/Desktop/Main/',
+        path = '/Users/utkarshverma/Library/Mobile Documents/iCloud~md~obsidian/Documents/Main/',
       },
     },
     disable_frontmatter = true,

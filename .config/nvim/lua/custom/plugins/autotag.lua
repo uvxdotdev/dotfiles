@@ -5,5 +5,6 @@ return {
     'javascriptreact',
     'typescript',
     'typescriptreact',
+    'rust',
   },
 }

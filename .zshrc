@@ -1,5 +1,3 @@
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
 if [ ! -d "$ZINIT_HOME" ]; then
@@ -52,13 +50,16 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 alias ls="eza --icons --all"
 alias lg="lazygit"
-alias nv="nvim"
+# alias nv="nvim"
+alias vim="nvim"
 alias notes="cd /Users/utkarshverma/Library/Mobile Documents/iCloud~md~obsidian/Documents/Main && nvim ."
-alias v="fd --type f --hidden --exclude .git | fzf-tmux -p| xargs nvim"
-alias cdx='cd $(fd --type directory | fzf -i)'
+alias nv="fd --type f --hidden --exclude .git | fzf-tmux -p| xargs nvim"
+alias jd='cd $(fd --type directory --hidden --exclude .git | fzf-tmux -p)'
+alias yz='yazi'
 # alias act='if [ -d "venv" ]; then source ./venv/bin/activate && echo "Virtual environment activated."; else echo "Virtual environment not found."; fi'
 
 alias act='if [ -d "venv" ]; then source ./venv/bin/activate && echo "Virtual environment activated."; elif [ -d ".venv" ]; then source ./.venv/bin/activate && echo "Virtual environment activated."; else echo "Virtual environment not found."; fi'
+
 alias workpass='export PASSWORD_STORE_DIR=~/.sakhi_pass_store/'
 alias localpass='export PASSWORD_STORE_DIR=~/.password-store/'
 alias np="nowplaying-cli"
@@ -68,18 +69,16 @@ export EDITOR=nvim
 bindkey -v
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
+#
+# function ya() {
+# 	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+# 	yazi "$@" --cwd-file="$tmp"
+# 	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+# 		cd -- "$cwd"
+# 	fi
+# 	rm -f -- "$tmp"
+# }
 
-function ya() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
-}
-
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
 
 eval "$(starship init zsh)"
 
@@ -88,5 +87,5 @@ source <(fzf --zsh)
 eval "$(zoxide init --cmd cd zsh)"
 # eval "$(zoxide init zsh)"
 
-# Created by `pipx` on 2024-06-30 15:41:22
-export PATH="$PATH:/Users/utkarshverma/.local/bin"
+
+. "$HOME/.cargo/env"

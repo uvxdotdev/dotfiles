@@ -291,13 +291,19 @@ require('lazy').setup({
       require('which-key').setup()
 
       -- Document existing key chains
-      require('which-key').register {
-        ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
-        ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
-        ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
-        ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
-        ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
-        ['<leader>lx'] = { name = 'Hide Warnings', _ = 'which_key_ignore' },
+      require('which-key').add {
+        { '<leader>c', group = '[C]ode' },
+        { '<leader>c_', hidden = true },
+        { '<leader>d', group = '[D]ocument' },
+        { '<leader>d_', hidden = true },
+        { '<leader>lx', group = 'Hide Warnings' },
+        { '<leader>lx_', hidden = true },
+        { '<leader>r', group = '[R]ename' },
+        { '<leader>r_', hidden = true },
+        { '<leader>s', group = '[S]earch' },
+        { '<leader>s_', hidden = true },
+        { '<leader>w', group = '[W]orkspace' },
+        { '<leader>w_', hidden = true },
       }
     end,
   },
@@ -567,13 +573,21 @@ require('lazy').setup({
         --   },
         -- },
         pyright = {
-          root_dir = require('lspconfig.util').root_pattern('venv', 'env'),
-          settings = {
-            pyright = {
-              usePlaceholders = true,
-            },
-          },
+          root_dir = require('lspconfig.util').root_pattern('venv', 'env', '.venv'),
+          -- settings = {
+          --   pyright = {
+          --     usePlaceholders = true,
+          --     disableOrganizeImports = true,
+          --   },
+          -- python = {
+          --   analysis = {
+          --     -- Ignore all files for analysis to exclusively use Ruff for linting
+          --     ignore = { '*' },
+          --   },
+          -- },
+          -- },
         },
+        -- ruff = {},
         rust_analyzer = {
           settings = {
             rust_analyzer = {
@@ -596,9 +610,9 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        -- tsserver = {},
-        -- tailwindcss = {},
-        -- eslint = {},
+        -- ts_ls = {},
+        tailwindcss = {},
+        eslint = {},
 
         lua_ls = {
           -- cmd = {...},
@@ -621,12 +635,12 @@ require('lazy').setup({
         --   },
         -- },
 
-      --   clangd = {
-      --     filetypes = {
-      --       'cpp',
-      --     },
-      --   },
-      -- }
+        --   clangd = {
+        --     filetypes = {
+        --       'cpp',
+        --     },
+        --   },
+      }
 
       -- Ensure the servers and tools above are installed
       --  To check the current status of installed tools and/or manually install
@@ -645,9 +659,9 @@ require('lazy').setup({
         -- 'black',
         -- 'terraform-ls',
         -- 'typescript-language-server',
-        -- 'tailwindcss-language-server',
-        -- 'eslint-lsp',
-        -- 'prettierd',
+        'tailwindcss-language-server',
+        'eslint-lsp',
+        'prettierd',
         -- 'clangd',
         -- 'clang-format',
       })
@@ -685,12 +699,12 @@ require('lazy').setup({
       formatters_by_ft = {
         lua = { 'stylua' },
         -- Conform can also run multiple formatters sequentially
-        python = { 'isort', 'black' },
+        -- python = { 'isort', 'black' },
         -- You can use a sub-list to tell conform to run *until* a formatter
         go = { 'goimports', 'gofmt' },
         -- is found.
         javascript = { { 'prettierd' } },
-        rust = { 'rustfmt' },
+        rust = { 'leptosfmt' },
         cpp = { 'clang-format' },
         terraform = { 'terraformfmt' },
       },
@@ -895,6 +909,21 @@ require('lazy').setup({
       --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
     end,
   },
+  {
+    'rayliwell/tree-sitter-rstml',
+    dependencies = { 'nvim-treesitter' },
+    build = ':TSUpdate',
+    config = function()
+      require('tree-sitter-rstml').setup()
+    end,
+  },
+  -- Automatic tag closing and renaming (optional but highly recommended)
+  {
+    'windwp/nvim-ts-autotag',
+    config = function()
+      require('nvim-ts-autotag').setup()
+    end,
+  },
 
   -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
@@ -996,7 +1025,7 @@ vim.keymap.set('n', '<leader>of', ':ObsidianFollowLink<CR>', {
   silent = true,
 })
 
-vim.keymap.set('n', '<leader>x', ':BufferLineCyclePrev<CR>:BufferLineCloseRight<CR>', {
+vim.keymap.set('n', '<leader>x', ':bd<CR>', {
   noremap = true,
   silent = true,
 })
@@ -1036,3 +1065,28 @@ vim.api.nvim_set_hl(0, 'H1', { fg = '#f38ba8' })
 require('transparent').clear_prefix 'BufferLine'
 vim.g.transparent_enabled = true
 -- require('transparent').clear_prefix 'lualine'
+--
+-- defaults
+require('HexEditor').setup {
+
+  -- cli command used to dump hex data
+  dump_cmd = 'xxd -g 1 -u',
+
+  -- cli command used to assemble from hex data
+  assemble_cmd = 'xxd -r',
+
+  -- function that runs on BufReadPre to determine if it's binary or not
+  is_buf_binary_pre_read = function()
+    -- logic that determines if a buffer contains binary data or not
+    -- must return a bool
+  end,
+
+  -- function that runs on BufReadPost to determine if it's binary or not
+  is_buf_binary_post_read = function()
+    -- logic that determines if a buffer contains binary data or not
+    -- must return a bool
+  end,
+}
+-- require('obsidian').setup {
+--   ui = { enable = false },
+-- }

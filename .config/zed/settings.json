@@ -1,0 +1,56 @@
+{
+  "features": {
+    "inline_completion_provider": "supermaven"
+  },
+  "show_inline_completions": true,
+  "vim_mode": true,
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "soft_wrap": "editor_width",
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Tokyo Night"
+  },
+  "lsp": {
+    "pyright": {
+      "settings": {
+        "python.analysis": {
+          "diagnosticMode": "workspace"
+          // "typeCheckingMode": "strict"
+        },
+        "python": {
+          "pythonPath": ".venv/bin/python"
+        }
+      }
+    },
+    "wakatime": {
+      "settings": {
+        "api-key": ""
+      }
+    }
+  },
+  "languages": {
+    "Python": {
+      "language_servers": ["ruff", "pyright"],
+      "format_on_save": "on",
+      "formatter": [
+        {
+          "language_server": {
+            "name": "ruff"
+          }
+        }
+      ]
+    }
+  },
+  "buffer_font_family": "FiraCode Nerd Font",
+  "ui_font_family": "FiraCode Nerd Font",
+  "relative_line_numbers": true,
+  "cursor_blink": false,
+  "scrollbar": {
+    "show": "never"
+  },
+  "buffer_line_height": {
+    "custom": 1.75
+  }
+}

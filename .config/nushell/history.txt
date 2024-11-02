@@ -1,0 +1,38 @@
+clear
+ls
+eza
+clear
+ls
+clear
+ls
+ls | get neo
+ls | get where name=neo
+clear
+ls
+clear
+cd ..
+cd .config/nushell/
+pwd
+ls
+cd ..
+ls
+cd ..
+cd dotfiles/
+ls
+ls -a
+cd .config/
+ls
+rm -rf borders/
+rm -rf bottom_bar/
+rm -rf sketchybar/
+;s
+ls
+rm -rf temp
+ls
+clear
+ls
+cd ..
+ls
+ls -a
+cd ..
+vim .config/kitty/kitty.conf

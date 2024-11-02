@@ -4,7 +4,7 @@ right_format = """$cmd_duration$battery$aws"""
 
 add_newline = true
 format = """
- [󰊠 ](bold italic #FFA500) \ 
+ [󰊠 ](bold italic #ffdcd7ba) \ 
  [](bg:#769ff0 fg:#769ff0)$directory\
  [](bold italic skyblue)$git_branch$rust$python$golang$nodejs
  [](#00FFFF)$character
@@ -36,16 +36,16 @@ format = 'via [$symbol($version )]($style)'
 #
 # # Replace the "❯"
 [character]
-success_symbol = "[󰋇 ](#00FFFF)"
+success_symbol = "[󰋇 ](#ffdcd7)"
 error_symbol = "[󰒲 ](red)"
 #
 # # configure directory
 [directory]
 read_only = " "
-format = "[ ](#2687A2)[ $path]($style)[$lock_symbol]($lock_style )[ ](bold #2687A2) "
+format = "[ ](#ffdcd7)[ $path]($style)[$lock_symbol]($lock_style )[ ](bold #ffdcd7) "
 truncation_length = 10
 truncate_to_repo = true                                                                 # truncates directory to root folder if in github repo
-style = "italic fg:#e3e5e5 bg:#2687A2"
+style = "italic fg:#202123 bg:#ffdcd7"
 #
 [os]
 format = " ($style)"
@@ -72,7 +72,7 @@ format = '[ $symbol ($version) ]($style)'
 symbol = "󱔎 "
 #pyenv_version_name = true
 format = 'via [${symbol}(${version}) ⥋ (\($virtualenv\))]($style) '
-style = "bold  #00C5FF"
+style = "bold  #FFDCD7"
 pyenv_prefix = "venv "
 python_binary = ["./venv/bin/python", "python", "python3", "python2"]
 detect_extensions = ["py"]
@@ -88,7 +88,7 @@ version_format = "v${major}.${minor}"
 [aws]
 format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
 symbol = '󰅟 '
-style = "yellow"
+style = "ffdcd7"
 #
 #
 # [battery]
