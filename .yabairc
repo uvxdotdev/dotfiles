@@ -29,7 +29,7 @@ yabai -m config mouse_drop_action            swap
 # general space settings
 yabai -m config layout                       bsp
 yabai -m config top_padding                  15
-yabai -m config bottom_padding               66
+yabai -m config bottom_padding               15
 # NOTE: for OBS floating head
 yabai -m config left_padding                 15
 yabai -m config right_padding                15

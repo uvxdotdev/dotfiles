@@ -896,3 +896,12 @@ $env.config = {
         }
     ]
 }
+
+# aliases
+alias ls = ls -a
+alias l = eza --icons --all
+alias vim = nvim
+
+source ~/.zoxide.nu
+source ~/.cache/carapace/init.nu
+use ~/.cache/starship/init.nu

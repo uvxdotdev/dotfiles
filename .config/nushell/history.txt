@@ -36,3 +36,160 @@ ls
 ls -a
 cd ..
 vim .config/kitty/kitty.conf
+ls
+clear
+btop
+vim .config/kitty/kitty.conf
+clear
+nv 
+cd dotfiles
+ls
+cd .config
+cd nix
+ls
+cd
+cd nix
+ls
+nvim flake.nix
+exit
+aws
+ssh 140.245.19.119 
+clear
+cargo
+clear
+tmux
+nivm
+clear
+nvim
+clear
+yazi
+clear
+which yazi
+yazi
+clear
+exit
+clear
+neofetch
+clear
+neofetch
+yazi
+cargo install yazi
+yazi --version
+exit
+nu
+exit
+nu
+exit
+yazi
+yazi
+tmux
+exit
+cal 
+cal
+date 
+date now
+date humanize 
+24052003 | date humanize 
+'24052003' | date humanize 
+darwin
+clear
+exit
+clear
+date now | date to-timezone "Europe/London"
+[[framework, language]; [Django, Python] [Laravel, PHP]]
+which http
+clear
+exit
+zoxide dotfiles
+clear
+ls
+nvim dotfiles/.config/nushell/
+clear
+exit
+z dotfiles
+ls
+clear
+zi
+z ser
+z m
+z ma
+clear
+z nu
+cd ~/dotfiles/.config/nushell/
+ls
+vim config.nu
+exit
+clear
+ls
+l
+clear
+l
+z ser
+vim .
+exit
+clear
+exit
+ls
+$nu.config-path
+cat /etc/shels
+cat /etc/shells
+chsh -s /run/current-system/sw/bin/nu
+sudo bash -c 'chsh -s /run/current-system/sw/bin/nu'
+clear
+ls
+clear
+vim .config
+clear
+ls
+exit
+nu
+ls
+cd dotfiles/.config/
+ls
+cd nushell/
+ls
+cd .config
+ls
+cd ..
+cd .config
+ls
+cd nushell/
+ls
+vim .
+clear
+ls
+exit
+zoxide
+clear
+ls
+exit
+vim .
+exit
+clear
+exit
+clear
+z do
+exit
+l
+ls
+clear
+ls
+ps
+clear
+ls
+exit
+which zoxide
+clear
+ln -s "$HOME/Application Support/nushell/config.nu" "$HOME/.config/nushell/config.nu"
+$HOME
+exit
+chsh -s /run/current-system/sw/bin/nu
+exit
+yazi
+ls
+clear
+cd dot
+z do
+ls
+vim .
+exit

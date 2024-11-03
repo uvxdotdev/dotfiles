@@ -69,6 +69,8 @@ export EDITOR=nvim
 bindkey -v
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
+export XDG_CONFIG_HOME="/Users/utkarshverma/.config"
+
 #
 # function ya() {
 # 	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
@@ -86,6 +88,5 @@ eval "$(starship init zsh)"
 source <(fzf --zsh)
 eval "$(zoxide init --cmd cd zsh)"
 # eval "$(zoxide init zsh)"
-
 
 . "$HOME/.cargo/env"
