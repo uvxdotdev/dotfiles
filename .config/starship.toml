@@ -1,108 +1,62 @@
-# ~/.config/starship.toml
+add_newline = false
+# A minimal left prompt
+format = """$directory$character"""
+palette = "catppuccin_mocha"
+# move the rest of the prompt to the right
+right_format = """$cmd_duration$git_branch$git_status $kubernetes_context$docker_context$python$rust$golang$aws"""
+command_timeout = 1000
 
-right_format = """$cmd_duration$battery$aws"""
-
-add_newline = true
-format = """
- [󰊠 ](bold italic #ffdcd7ba) \ 
- [](bg:#769ff0 fg:#769ff0)$directory\
- [](bold italic skyblue)$git_branch$rust$python$golang$nodejs
- [](#00FFFF)$character
-"""
-# ~/.config/starship.toml
 [directory.substitutions]
-"Documents" = "󰈙 "
-"Downloads" = " "
-"Music" = " "
-"Pictures" = "  "
-"Desktop" = "  "
-"~" = " "
-"nvim" = ""
-".config" = "󰴳 "
-
+'~/tests/starship-custom' = 'work-project'
 
 [git_branch]
-symbol = ' '
-truncation_length = 8
-truncation_symbol = '..'
-format = 'on ⌠ [$symbol$branch(:$remote_branch) ]($style)⌡  '
-style = "bold green"
+format =  '[$symbol$branch(:$remote_branch)]($style)'
+
+[aws]
+format = '[$symbol(profile: "$profile" )(\(region: $region\) )]($style)'
+disabled = false
+style = 'bold blue'
+symbol = " "
 
 [golang]
-symbol = '󰟓  '
-format = 'via [$symbol($version )]($style)'
+format = '[ ](bold cyan)'
 
+# [kubernetes]
+# symbol = '☸ '
+# disabled = true
+# detect_files = ['Dockerfile']
+# format = '[$symbol$context( \($namespace\))]($style) '
+# contexts = [
+#   { context_pattern = "arn:aws:eks:us-west-2:577926974532:cluster/zd-pvc-omer", style = "green", context_alias = "omerxx", symbol = " " },
+# ]
 
-#
-# # Replace the "❯"
-[character]
-success_symbol = "[󰋇 ](#ffdcd7)"
-error_symbol = "[󰒲 ](red)"
-#
-# # configure directory
-[directory]
-read_only = " "
-format = "[ ](#ffdcd7)[ $path]($style)[$lock_symbol]($lock_style )[ ](bold #ffdcd7) "
-truncation_length = 10
-truncate_to_repo = true                                                                 # truncates directory to root folder if in github repo
-style = "italic fg:#202123 bg:#ffdcd7"
-#
-[os]
-format = " ($style)"
-style = "bold blue italic"
-disabled = false
+[docker_context]
+disabled = true
 
-
-#
-[cmd_duration]
-min_time = 4
-show_milliseconds = false
-format = '󰪢 [$duration]($style) '
-disabled = false
-style = "bold italic blue"
-#
-#
-[rust]
-style = "bold  #00C5FF"
-symbol = ""
-format = '[ $symbol ($version) ]($style)'
-
-
-[python]
-symbol = "󱔎 "
-#pyenv_version_name = true
-format = 'via [${symbol}(${version}) ⥋ (\($virtualenv\))]($style) '
-style = "bold  #FFDCD7"
-pyenv_prefix = "venv "
-python_binary = ["./venv/bin/python", "python", "python3", "python2"]
-detect_extensions = ["py"]
-version_format = "v${major}.${minor}"
-#
-#
-# [nodejs] 
-# format = "via [ $version](bold italic green) "
-# detect_files = ["package.json", ".node-version"]
-# detect_folders = ["node_modules"]
-#
-#
-[aws]
-format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
-symbol = '󰅟 '
-style = "ffdcd7"
-#
-#
-# [battery]
-# full_symbol = "🔋"
-# charging_symbol = "🔌"
-# discharging_symbol = "⚡"
-#
-[[battery.display]]
-threshold = 30
-style = "bold red"
-
-[kubernetes]
-symbol = '☸ '
-disabled = false
-format = '[$symbol$context(\[$namespace\])]($style) '
-[kubernetes.context_aliases]
-'arn:aws:eks:us-west-2:577926974532:cluster/gal-kub-demo-cluster' = 'gal'
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"

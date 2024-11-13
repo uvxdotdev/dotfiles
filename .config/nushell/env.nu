@@ -1,3 +1,5 @@
+$env.SHELL = '/run/current-system/sw/bin/nu'
+
 # Nushell Environment Config File
 #
 # version = "0.99.1"
@@ -99,6 +101,7 @@ use std "path add"
 
 path add /opt/homebrew/bin
 path add /run/current-system/sw/bin
+path add ~/.cargo/bin
 
 # To load from a custom file you can use:
 # source ($nu.default-config-dir | path join 'custom.nu')
