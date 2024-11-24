@@ -659,9 +659,9 @@ require('lazy').setup({
         -- 'black',
         -- 'terraform-ls',
         -- 'typescript-language-server',
-        'tailwindcss-language-server',
-        'eslint-lsp',
-        'prettierd',
+        -- 'tailwindcss-language-server',
+        -- 'eslint-lsp',
+        -- 'prettierd',
         -- 'clangd',
         -- 'clang-format',
       })
@@ -1067,26 +1067,28 @@ vim.g.transparent_enabled = true
 -- require('transparent').clear_prefix 'lualine'
 --
 -- defaults
-require('HexEditor').setup {
-
-  -- cli command used to dump hex data
-  dump_cmd = 'xxd -g 1 -u',
-
-  -- cli command used to assemble from hex data
-  assemble_cmd = 'xxd -r',
-
-  -- function that runs on BufReadPre to determine if it's binary or not
-  is_buf_binary_pre_read = function()
-    -- logic that determines if a buffer contains binary data or not
-    -- must return a bool
-  end,
-
-  -- function that runs on BufReadPost to determine if it's binary or not
-  is_buf_binary_post_read = function()
-    -- logic that determines if a buffer contains binary data or not
-    -- must return a bool
-  end,
-}
+-- require('HexEditor').setup {
+--
+--   -- cli command used to dump hex data
+--   dump_cmd = 'xxd -g 1 -u',
+--
+--   -- cli command used to assemble from hex data
+--   assemble_cmd = 'xxd -r',
+--
+--   -- function that runs on BufReadPre to determine if it's binary or not
+--   is_buf_binary_pre_read = function()
+--     -- logic that determines if a buffer contains binary data or not
+--     -- must return a bool
+--     return false
+--   end,
+--
+--   -- function that runs on BufReadPost to determine if it's binary or not
+--   is_buf_binary_post_read = function()
+--     -- logic that determines if a buffer contains binary data or not
+--     -- must return a bool
+--     return false
+--   end,
+-- }
 -- require('obsidian').setup {
 --   ui = { enable = false },
 -- }
@@ -1107,3 +1109,62 @@ require('catppuccin').setup {
 require('notify').setup {
   background_colour = '#000000',
 }
+require('image').setup {
+  backend = 'kitty',
+  processor = 'magick_rock', -- or "magick_cli"
+  integrations = {
+    markdown = {
+      enabled = true,
+      clear_in_insert_mode = false,
+      download_remote_images = true,
+      only_render_image_at_cursor = true,
+      filetypes = { 'markdown', 'vimwiki' }, -- markdown extensions (ie. quarto) can go here
+    },
+    neorg = {
+      enabled = true,
+      filetypes = { 'norg' },
+    },
+    typst = {
+      enabled = true,
+      filetypes = { 'typst' },
+    },
+    html = {
+      enabled = false,
+    },
+    css = {
+      enabled = false,
+    },
+  },
+  max_width = nil,
+  max_height = nil,
+  max_width_window_percentage = nil,
+  max_height_window_percentage = 50,
+  window_overlap_clear_enabled = false, -- toggles images when windows are overlapped
+  window_overlap_clear_ft_ignore = { 'cmp_menu', 'cmp_docs', '' },
+  editor_only_render_when_focused = false, -- auto show/hide images when the editor gains/looses focus
+  tmux_show_only_in_active_window = true, -- auto show/hide images in the correct Tmux window (needs visual-activity off)
+  hijack_file_patterns = { '*.png', '*.jpg', '*.jpeg', '*.gif', '*.webp', '*.avif' }, -- render image files as images when opened
+}
+
+-- Function to process markdown files using nushell script
+vim.api.nvim_create_autocmd({ 'BufWritePost' }, {
+  pattern = { '*.md', '*.markdown' },
+  callback = function()
+    -- Get the full path of the current file
+    local file_path = vim.fn.expand '%:p'
+
+    -- Create the command that sources the script file and runs the function
+    local cmd = string.format('nu -c \'source ~/.config/nushell/scripts/nu-task.nu; process-markdown "%s"\'', file_path)
+
+    -- Execute the command asynchronously
+    vim.fn.jobstart(cmd, {
+      on_exit = function(_, exit_code)
+        if exit_code == 0 then
+          print 'Markdown processing completed successfully'
+        else
+          vim.api.nvim_err_writeln 'Error processing markdown file'
+        end
+      end,
+    })
+  end,
+})

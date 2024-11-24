@@ -896,7 +896,7 @@ $env.config = {
         }
     ]
 }
-
+"\n$env.ASDF_DIR = (brew --prefix asdf | str trim | into string | path join 'libexec')\n source " +  (brew --prefix asdf | str trim | into string | path join 'libexec/asdf.nu') | save --append $nu.config-path
 
 # aliases
 alias core-http = http
@@ -909,9 +909,13 @@ alias l = eza --icons --all
 alias vim = nvim
 alias lg = lazygit
 alias cat = bat
+alias act = overlay use .venv/bin/activate.nu
+
+alias notes = nvim '/Users/utkarshverma/Library/Mobile Documents/iCloud~md~obsidian/Documents/Main'
+
+source ~/.config/nushell/scripts/nu-task.nu
+
 
 source ~/.zoxide.nu
 source ~/.cache/carapace/init.nu
 use ~/.cache/starship/init.nu
-
-neofetch

@@ -109,6 +109,7 @@ path add ~/.cargo/bin
 
 
 $env.EDITOR = 'nvim'
+$env.DYLD_LIBRARY_PATH = '/opt/homebrew/lib/'
 
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
 mkdir ~/.cache/carapace
