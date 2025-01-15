@@ -55,11 +55,13 @@ def extract-tasks [file_path: string] {
     $content 
         | split row "\n"
         | enumerate
-        | where { |item| $item.item =~ '- \[ \]' }
+        | where { |item| ($item.item) =~ '\s*- \[ \]' }
         | each { |item|
             let line_number = ($item.index + 1)
             let line = $item.item
-            let task = ($line | str substring 6..)
+            # Find position of checkbox and extract from there
+            let checkbox_pos = ($line | str index-of "- [ ]")
+            let task = ($line | str substring ($checkbox_pos + 6)..)
             let parsed = ($task | parse "({due_date}) {task_name}")
             
             if ($parsed | is-empty) {
@@ -210,7 +212,6 @@ def task-ls [] {
         
         $display_task
     }
-    | sort-by "Due Date"
 }
 
 # Open a specific task in Neovim

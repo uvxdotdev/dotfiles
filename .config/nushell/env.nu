@@ -102,6 +102,7 @@ use std "path add"
 path add /opt/homebrew/bin
 path add /run/current-system/sw/bin
 path add ~/.cargo/bin
+path add ~/go/bin
 
 # To load from a custom file you can use:
 # source ($nu.default-config-dir | path join 'custom.nu')
@@ -112,6 +113,9 @@ $env.EDITOR = 'nvim'
 $env.DYLD_LIBRARY_PATH = '/opt/homebrew/lib/'
 
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
+
+$env.TERM = 'xterm-256color'
+
 mkdir ~/.cache/carapace
 carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
 

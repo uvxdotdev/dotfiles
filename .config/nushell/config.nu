@@ -896,7 +896,6 @@ $env.config = {
         }
     ]
 }
-"\n$env.ASDF_DIR = (brew --prefix asdf | str trim | into string | path join 'libexec')\n source " +  (brew --prefix asdf | str trim | into string | path join 'libexec/asdf.nu') | save --append $nu.config-path
 
 # aliases
 alias core-http = http
@@ -911,9 +910,21 @@ alias lg = lazygit
 alias cat = bat
 alias act = overlay use .venv/bin/activate.nu
 
-alias notes = nvim '/Users/utkarshverma/Library/Mobile Documents/iCloud~md~obsidian/Documents/Main'
+def localpass [] {
+    load-env { PASSWORD_STORE_DIR: $"($env.HOME)/.password-store/" }
+}
+
+def workpass [] {
+    load-env { PASSWORD_STORE_DIR: $"($env.HOME)/.sakhi_pass_store/" }
+}
+
+def notes [] {
+    cd '/Users/utkarshverma/Library/Mobile Documents/iCloud~md~obsidian/Documents/Main'
+    nvim
+}
 
 source ~/.config/nushell/scripts/nu-task.nu
+source ~/.config/nushell/scripts/aws.nu
 
 
 source ~/.zoxide.nu

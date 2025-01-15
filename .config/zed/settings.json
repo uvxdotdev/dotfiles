@@ -31,6 +31,9 @@
     }
   },
   "languages": {
+    "Go": {
+      "show_inline_completions": true
+    },
     "Python": {
       "language_servers": ["ruff", "pyright"],
       "format_on_save": "on",
