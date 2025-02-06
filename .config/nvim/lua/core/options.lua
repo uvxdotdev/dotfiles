@@ -44,3 +44,7 @@ vim.opt.runtimepath:remove '/usr/share/vim/vimfiles' -- Separate Vim plugins fro
 vim.api.nvim_set_hl(0, 'LineNrAbove', { fg = '#43A784', bold = false })
 vim.api.nvim_set_hl(0, 'LineNr', { fg = '#ffffff', bold = true })
 vim.api.nvim_set_hl(0, 'LineNrBelow', { fg = '#43A784', bold = false })
+
+vim.diagnostic.config { virtual_lines = true }
+
+vim.g.nord_disable_background = true

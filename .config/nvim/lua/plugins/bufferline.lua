@@ -41,13 +41,12 @@ return {
         maximum_length = 15,
         sort_by = 'insert_at_end',
       },
-      highlights = require("catppuccin.groups.integrations.bufferline").get(),
-        -- separator_selected = {},
-        -- tab_selected = {},
-        -- background = {},
-        -- indicator_selected = {},
-        -- fill = {},
-      
+      highlights = require('catppuccin.groups.integrations.bufferline').get(),
+      -- separator_selected = {},
+      -- tab_selected = {},
+      -- background = {},
+      -- indicator_selected = {},
+      -- fill = {},
     }
   end,
 }

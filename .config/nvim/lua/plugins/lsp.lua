@@ -164,6 +164,7 @@ return {
       -- But for many setups, the LSP (`tsserver`) will work just fine
       ts_ls = {}, -- tsserver is deprecated
       rust_analyzer = {},
+      zls = {},
 
       ruff = {
         init_options = {
@@ -254,6 +255,7 @@ return {
     vim.list_extend(ensure_installed, {
       'stylua', -- Used to format Lua code
       'rust_analyzer',
+      'zls',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

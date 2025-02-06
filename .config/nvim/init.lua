@@ -30,15 +30,18 @@ require('lazy').setup {
   require 'plugins.comment',
   require 'plugins.obsidian',
   require 'plugins.markdown',
+  -- require 'plugins.markview',
   require 'plugins.better-esc',
   require 'plugins.waka',
   require 'plugins.supermaven',
+  require 'plugins.typr',
   require 'plugins.snacks',
   require 'plugins.mini-surround',
   require 'plugins.mini-ai',
 }
 
 vim.cmd.colorscheme 'catppuccin'
+-- vim.cmd.colorscheme 'nord'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

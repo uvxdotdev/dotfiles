@@ -80,3 +80,5 @@ vim.keymap.set('n', '<leader>ot', ':ObsidianToday<CR>', opts)
 vim.keymap.set('n', '<leader>oT', ':ObsidianTemplate<CR>', opts)
 
 vim.keymap.set('n', '<leader>of', ':ObsidianFollowLink<CR>', opts)
+
+-- Snacks
