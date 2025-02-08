@@ -193,3 +193,13 @@ z do
 ls
 vim .
 exit
+lua
+nvim --clean -c ":luafile minimal-setup.lua"
+curl
+curl google.com
+curl www.google.com
+clear
+exit
+z nix
+nvim --clean -c ":luafile minimal-setup.lua"
+exit

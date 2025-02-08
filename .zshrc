@@ -90,3 +90,5 @@ eval "$(zoxide init --cmd cd zsh)"
 # eval "$(zoxide init zsh)"
 
 . "$HOME/.cargo/env"
+
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"

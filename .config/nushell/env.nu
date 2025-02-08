@@ -115,6 +115,7 @@ $env.DYLD_LIBRARY_PATH = '/opt/homebrew/lib/'
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
 
 $env.TERM = 'xterm-256color'
+$env.PEREC_DIR = '/Users/utkarshverma/Library/Mobile Documents/iCloud~md~obsidian/Documents/Main'
 
 mkdir ~/.cache/carapace
 carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
