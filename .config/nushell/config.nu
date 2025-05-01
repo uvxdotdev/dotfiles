@@ -931,6 +931,7 @@ source ~/.config/nushell/scripts/nu-task.nu
 source ~/.config/nushell/scripts/aws.nu
 
 source ~/.config/nushell/wal/kitty-to-ghostty.nu
+source ~/.config/nushell/wal/generate_theme.nu
 
 source ~/.zoxide.nu
 source ~/.cache/carapace/init.nu

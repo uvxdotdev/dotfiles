@@ -203,3 +203,13 @@ exit
 z nix
 nvim --clean -c ":luafile minimal-setup.lua"
 exit
+ls
+clear
+exi
+exit
+generate_theme
+ls
+clear
+z dot
+ls
+vim

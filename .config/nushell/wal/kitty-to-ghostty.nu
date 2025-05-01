@@ -81,15 +81,6 @@ def kitty-to-ghostty [
         $ghostty_lines = ($ghostty_lines | append $"selection-foreground = ($config.active_tab_foreground)")
     }
     
-    # Add border colors if they exist
-    if "active_border_color" in $config {
-        $ghostty_lines = ($ghostty_lines | append $"window-theme-active-border-color = ($config.active_border_color)")
-    }
-    
-    if "inactive_border_color" in $config {
-        $ghostty_lines = ($ghostty_lines | append $"window-theme-inactive-border-color = ($config.inactive_border_color)")
-    }
-    
     # Save the ghostty config to file
     $ghostty_lines | str join "\n" | save -f $expanded_ghostty_path
     
