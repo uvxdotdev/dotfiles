@@ -223,11 +223,6 @@ $env.config = {
         use_ls_colors: true # set this to true to enable file/path/directory completions using LS_COLORS
     }
 
-    filesize: {
-        metric: false # true => KB, MB, GB (ISO standard), false => KiB, MiB, GiB (Windows standard)
-        format: "auto" # b, kb, kib, mb, mib, gb, gib, tb, tib, pb, pib, eb, eib, auto
-    }
-
     cursor_shape: {
         emacs: line # block, underscore, line, blink_block, blink_underscore, blink_line, inherit to skip setting cursor shape (line is the default)
         vi_insert: block # block, underscore, line, blink_block, blink_underscore, blink_line, inherit to skip setting cursor shape (block is the default)
@@ -935,7 +930,11 @@ $env.PATH = ( $env.PATH | split row (char esep) | where { |p| $p != $shims_dir }
 source ~/.config/nushell/scripts/nu-task.nu
 source ~/.config/nushell/scripts/aws.nu
 
+source ~/.config/nushell/wal/kitty-to-ghostty.nu
 
 source ~/.zoxide.nu
 source ~/.cache/carapace/init.nu
-use ~/.cache/starship/init.nu
+# use ~/.cache/starship/init.nu
+source ~/.oh-my-posh.nu
+
+source ~/.config/nushell/wal/wal_theme.nu
