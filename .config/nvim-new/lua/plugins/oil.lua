@@ -4,7 +4,6 @@ return {
   lazy = false,
   config = function()
 	  require('oil').setup {
-		  columns = {"icons"},
 		  keymaps = {
 			  ["<C-h>"] = false,
 		  },

@@ -213,3 +213,4 @@ clear
 z dot
 ls
 vim
+exit
