@@ -15,16 +15,6 @@ return {
 			"rafamadriz/friendly-snippets",
 			"moyiz/blink-emoji.nvim",
 			"ray-x/cmp-sql",
-			{
-				"supermaven-inc/supermaven-nvim",
-				opts = {
-					disable_inline_completion = true, -- disables inline completion for use with cmp
-					disable_keymaps = true, -- disables built in keymaps for more manual control
-				},
-			},
-			{
-				"huijiro/blink-cmp-supermaven",
-			},
 		},
 
 		-- use a release tag to download pre-built binaries
@@ -66,13 +56,8 @@ return {
 			-- Default list of enabled providers defined so that you can extend it
 			-- elsewhere in your config, without redefining it, due to `opts_extend`
 			sources = {
-				default = { "supermaven", "lsp", "path", "snippets", "buffer", "emoji", "sql" },
+				default = { "codecompanion", "lsp", "path", "snippets", "buffer", "emoji", "sql" },
 				providers = {
-					supermaven = {
-						name = "supermaven",
-						module = "blink-cmp-supermaven",
-						async = true,
-					},
 					emoji = {
 						module = "blink-emoji",
 						name = "Emoji",
