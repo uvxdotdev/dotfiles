@@ -1,9 +1,9 @@
 return {
-    'nvim-lualine/lualine.nvim',
-    dependencies = { 'echasnovski/mini.icons' },
-    opts = {
-	    options = {
-		    theme = 'gruvbox',
-  	}
-    }
+	"nvim-lualine/lualine.nvim",
+	dependencies = { "echasnovski/mini.icons" },
+	opts = {
+		options = {
+			theme = "gruvbox",
+		},
+	},
 }

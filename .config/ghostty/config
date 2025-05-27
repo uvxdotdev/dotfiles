@@ -1,10 +1,10 @@
-command = /run/current-system/sw/bin/nu
-macos-titlebar-style = tabs
+command = /run/current-system/sw/bin/fish
+macos-titlebar-style = transparent
 font-family = JetBrains Mono
 background-opacity = 0.2
 background-blur = 30
 
-theme = wal
+theme = GruvboxDark
 
 keybind = ctrl+h=goto_split:left
 keybind = ctrl+j=goto_split:bottom

@@ -32,3 +32,5 @@ carapace --list | awk '{print $1}' | xargs -I{} touch ~/.config/fish/completions
 carapace _carapace | source
 
 oh-my-posh init fish --config ~/.config/ohmyposh/gruvbox.omp.json | source
+
+direnv hook fish | source

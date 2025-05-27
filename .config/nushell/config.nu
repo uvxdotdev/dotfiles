@@ -939,3 +939,4 @@ source ~/.cache/carapace/init.nu
 source ~/.oh-my-posh.nu
 
 source ~/.config/nushell/wal/wal_theme.nu
+source $"($nu.home-path)/.cargo/env.nu"
