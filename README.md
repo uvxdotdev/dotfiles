@@ -1,4 +1,5 @@
 ## IF KANATA BREAKS
+https://github.com/jtroo/kanata/discussions/1537
 
 RUN THIS COMMANDS TO START VIRTUAL KEYBOARD
 `sudo launchctl start com.example.karabiner-vhiddaemon
