@@ -22,19 +22,19 @@
     "bindings": {
       // "shift-y": ["workspace::SendKeystrokes", "y $"] // Use neovim's yank behavior: yank to end of line.
       "tab": "pane::ActivateNextItem",
-      "shift-tab": "pane::ActivatePreviousItem",
+      "shift-tab": "pane::ActivatePrevItem",
       "space s f": "file_finder::Toggle",
       "ctrl-space \\": "pane::SplitLeft",
       "ctrl-space -": "pane::SplitDown",
       "ctrl-space x": "pane::CloseAllItems",
       "space e": "workspace::ToggleLeftDock",
-      "ctrl-l": "workspace::ActivatePaneRight",
-      "ctrl-k": "workspace::ActivatePaneUp",
-      "ctrl-j": "workspace::ActivatePaneDown",
-      "ctrl-h": "workspace::ActivatePaneLeft",
-      "ctrl-y": "editor::AcceptPartialEditPrediction",
-      "ctrl-i": "editor::AcceptEditPrediction",
-      "ctrl-;": "editor::ShowEditPrediction"
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-y": "editor::AcceptPartialInlineCompletion",
+      "ctrl-i": "editor::AcceptInlineCompletion",
+      "ctrl-;": "editor::ShowInlineCompletion"
     }
   },
   {
@@ -43,8 +43,8 @@
       "j k": "vim::NormalBefore", // In insert mode, make jk escape to normal mode.
       "j j": "vim::NormalBefore", // In insert mode, make jj escape to normal mode.
       "ctrl-y": "editor::ConfirmCompletion",
-      "ctrl-i": "editor::AcceptEditPrediction",
-      "ctrl-;": "editor::ShowEditPrediction"
+      "ctrl-i": "editor::AcceptInlineCompletion",
+      "ctrl-;": "editor::ShowInlineCompletion"
     }
   },
   {

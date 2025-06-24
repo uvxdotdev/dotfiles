@@ -13,6 +13,7 @@
 
 
 ;; Definine two aliases, one for esc/control to other for function key
+
 (defalias
   escctrl (tap-hold 100 100 esc lctl)
   a (tap-hold $tap-time $hold-time a lsft)
@@ -22,8 +23,7 @@
   j (tap-hold $tap-time $hold-time j rctl)
   k (tap-hold $tap-time $hold-time k ralt)
   l (tap-hold $tap-time $hold-time l rmet)
-  ; (tap-hold $tap-time $hold-time ; rmet)
-
+  ; (tap-hold $tap-time $hold-time ; rsft)
 )
 
 (deflayer base

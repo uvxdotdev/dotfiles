@@ -18,6 +18,8 @@ set EDITOR 'nvim'
 set SHELL '/run/current-system/sw/bin/fish'
 set NVIM_APPNAME 'nvim-new'
 
+set TERM xterm-256color
+
 
 alias vim=nvim
 alias ls='eza --icons --all'
@@ -34,3 +36,6 @@ carapace _carapace | source
 oh-my-posh init fish --config ~/.config/ohmyposh/gruvbox.omp.json | source
 
 direnv hook fish | source
+
+# opencode
+fish_add_path /Users/utkarshverma/.opencode/bin

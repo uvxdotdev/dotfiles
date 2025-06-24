@@ -1,30 +1,8 @@
 {
-  "language_models": {
-    "openai": {
-      "api_url": "https://llm.chutes.ai/v1",
-      "available_models": [
-        {
-          "name": "deepseek-ai/DeepSeek-R1-0528",
-          "display_name": "DeepSeek-R1-0528",
-          "max_tokens": 10240
-        }
-      ],
-      "version": "1"
-    }
-  },
-  "agent": {
-    "always_allow_tool_actions": true,
-    "model_parameters": [],
-    "default_model": {
-      "provider": "google",
-      "model": "gemini-2.5-pro-preview-03-25"
-    },
-    "version": "2"
-  },
   "features": {
-    "edit_prediction_provider": "supermaven"
+    "inline_completion_provider": "supermaven"
   },
-  "show_edit_predictions": true,
+  "show_inline_completions": true,
   "vim_mode": true,
   "ui_font_size": 16,
   "buffer_font_size": 16,
@@ -54,7 +32,7 @@
   },
   "languages": {
     "Go": {
-      "show_edit_predictions": true
+      "show_inline_completions": true
     },
     "Python": {
       "language_servers": ["ruff", "pyright"],
