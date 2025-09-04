@@ -41,7 +41,29 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
 # Also see: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
-automatically-unhide-macos-hidden-apps = false
+automatically-unhide-macos-hidden-apps = true
+
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'finder'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'safari'
+run = 'layout floating'
+ 
+[[on-window-detected]]
+if.app-name-regex-substring = 'camera'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'mail'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'quicktime'
+run = 'layout floating'
+
 
 # Possible values: (qwerty|dvorak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
@@ -97,6 +119,9 @@ outer.right =      15
 alt-slash = 'layout tiles horizontal vertical'
 alt-comma = 'layout accordion horizontal vertical'
 
+alt-ctrl-shift-f = 'fullscreen'
+alt-ctrl-f = 'layout floating tiling'
+
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
 alt-h = 'focus left'
 alt-j = 'focus down'
@@ -140,10 +165,10 @@ alt-shift-0 = 'move-node-to-workspace 10'
 1 = 'main'
 2 = 'main'
 3 = 'main'
-4 = 'secondary'
+4 = 'main'
 0 = 'built-in'
 
-alt-enter = 'exec-and-forget open -n /nix/store/wiindrplkcj1mn22x6nbl8clpnz7adpm-kitty-0.36.4/Applications/kitty.app'
+alt-enter = 'exec-and-forget open -n /nix/store/wgkk0lx08dycwm1rr4yyjkmgdndd8g4l-kitty-0.42.1/Applications/kitty.app'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'

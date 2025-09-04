@@ -1,25 +1,12 @@
 {
-  "language_models": {
-    "openai": {
-      "api_url": "https://llm.chutes.ai/v1",
-      "available_models": [
-        {
-          "name": "deepseek-ai/DeepSeek-R1-0528",
-          "display_name": "DeepSeek-R1-0528",
-          "max_tokens": 10240
-        }
-      ],
-      "version": "1"
-    }
-  },
   "agent": {
+    "default_profile": "ask",
     "always_allow_tool_actions": true,
     "model_parameters": [],
     "default_model": {
-      "provider": "google",
-      "model": "gemini-2.5-pro-preview-03-25"
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4"
     },
-    "version": "2"
   },
   "features": {
     "edit_prediction_provider": "supermaven"
@@ -32,7 +19,7 @@
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Gruvbox Dark Hard"
+    "dark": "Gruvbox Dark"
   },
   "lsp": {
     "pyright": {

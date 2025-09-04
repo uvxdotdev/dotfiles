@@ -27,7 +27,7 @@
       "ctrl-space \\": "pane::SplitLeft",
       "ctrl-space -": "pane::SplitDown",
       "ctrl-space x": "pane::CloseAllItems",
-      "space e": "workspace::ToggleLeftDock",
+      "space e": "project_panel::ToggleFocus",
       "ctrl-l": "workspace::ActivatePaneRight",
       "ctrl-k": "workspace::ActivatePaneUp",
       "ctrl-j": "workspace::ActivatePaneDown",
