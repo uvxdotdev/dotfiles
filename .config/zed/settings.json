@@ -1,12 +1,20 @@
 {
+  "context_servers": {
+    "mcp-server-context7": {
+      "source": "extension",
+      "enabled": true,
+      "settings": {
+        "context7_api_key": "ctx7sk-9f5916e9-8710-4b8b-a9fa-fec737611b7d"
+      }
+    }
+  },
   "agent": {
-    "default_profile": "ask",
-    "always_allow_tool_actions": true,
-    "model_parameters": [],
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4"
+      "provider": "openai",
+      "model": "gpt-5"
     },
+    "always_allow_tool_actions": true,
+    "model_parameters": []
   },
   "features": {
     "edit_prediction_provider": "supermaven"
@@ -19,7 +27,7 @@
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Gruvbox Dark"
+    "dark": "Oxocarbon Dark (Variant I)"
   },
   "lsp": {
     "pyright": {
@@ -57,7 +65,7 @@
   },
   "buffer_font_family": "FiraCode Nerd Font",
   "ui_font_family": "FiraCode Nerd Font",
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
   "cursor_blink": false,
   "scrollbar": {
     "show": "never"

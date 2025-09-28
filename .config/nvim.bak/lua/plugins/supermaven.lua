@@ -3,7 +3,7 @@ return {
 	opts = {
 		keymaps = {
 			accept_word = "<C-m>",
-			accept_suggestion = "<C-v>",
+			accept_suggestion = "<C-i>",
 		},
 	},
 }

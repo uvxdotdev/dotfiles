@@ -1,15 +1,9 @@
 command = /run/current-system/sw/bin/fish
 macos-titlebar-style = transparent
-font-family = JetBrains Mono
-background-opacity = 0.2
+font-family = RobotoMono Nerd Font
+window-decoration = false
+background-opacity = 1
 background-blur = 30
 
-theme = GruvboxDark
+theme = black-metal-gorgoroth
 
-keybind = ctrl+h=goto_split:left
-keybind = ctrl+j=goto_split:bottom
-keybind = ctrl+k=goto_split:top
-keybind = ctrl+l=goto_split:right
-
-keybind = ctrl+space>\=new_split:right
-keybind = ctrl+space>-=new_split:down

@@ -40,7 +40,7 @@ mkdir -p ~/.config/fish/completions
 carapace --list | awk '{print $1}' | xargs -I{} touch ~/.config/fish/completions/{}.fish # disable auto-loaded completions (#185)
 carapace _carapace | source
 
-oh-my-posh init fish --config ~/.config/ohmyposh/gruvbox.omp.json | source
+# oh-my-posh init fish --config ~/.config/ohmyposh/gruvbox.omp.json | source
 
 direnv hook fish | source
 
@@ -81,3 +81,15 @@ function knt
         echo "Kanata started"
     end
 end
+
+# pnpm
+set -gx PNPM_HOME "/Users/utkarshverma/Library/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
+
+starship init fish | source
+
+# uv
+fish_add_path "/Users/utkarshverma/.local/bin"
