@@ -92,3 +92,9 @@
 # . "$HOME/.cargo/env"
 
 # export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+# export OPENAI_API_KEY="sk-vzbNRbC9hWHqq2DsS6lxDi4jeCA1tz5nbpCGvB0blZlE1PP5"
+export OPENAI_API_KEY="sk-uv"
+
+
+# bun completions
+[ -s "/Users/uvx/.bun/_bun" ] && source "/Users/uvx/.bun/_bun"

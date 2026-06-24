@@ -18,6 +18,9 @@ set EDITOR 'nvim'
 set SHELL '/run/current-system/sw/bin/fish'
 set NVIM_APPNAME 'nvim-new'
 
+# set OPENAI_API_KEY "sk-vzbNRbC9hWHqq2DsS6lxDi4jeCA1tz5nbpCGvB0blZlE1PP5"
+set OPENAI_API_KEY "sk-uv"
+
 set TERM xterm-256color
 
 
@@ -31,21 +34,15 @@ alias minecraft='java -jar ~/minecraft/launcher.jar'
 alias nu='sudo darwin-rebuild switch --flake ~/nix#Utkarshs-MacBook-Pro'
 
 alias act='source ./.venv/bin/activate.fish; set -gx PATH ~/.npm-global/bin $PATH'
-zoxide init fish | source
 
 # starship init fish | source
 
-set -Ux CARAPACE_BRIDGES 'zsh,fish,bash,inshellisense' # optional
-mkdir -p ~/.config/fish/completions
-carapace --list | awk '{print $1}' | xargs -I{} touch ~/.config/fish/completions/{}.fish # disable auto-loaded completions (#185)
-carapace _carapace | source
+# set -Ux CARAPACE_BRIDGES 'zsh,fish,bash,inshellisense' # optional
+# carapace --list | awk '{print $1}' | xargs -I{} touch ~/.config/fish/completions/{}.fish # disable auto-loaded completions (#185)
+# carapace _carapace | source
 
-# oh-my-posh init fish --config ~/.config/ohmyposh/gruvbox.omp.json | source
 
-direnv hook fish | source
 
-# opencode
-fish_add_path /Users/utkarshverma/.opencode/bin
 
 
 function qt
@@ -82,14 +79,9 @@ function knt
     end
 end
 
-# pnpm
-set -gx PNPM_HOME "/Users/utkarshverma/Library/pnpm"
-if not string match -q -- $PNPM_HOME $PATH
-  set -gx PATH "$PNPM_HOME" $PATH
-end
-# pnpm end
 
 starship init fish | source
-
+direnv hook fish | source
+zoxide init fish | source
 # uv
-fish_add_path "/Users/utkarshverma/.local/bin"
+fish_add_path "/Users/uvx/.bun/bin"
