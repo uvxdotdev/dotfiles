@@ -1,0 +1,3 @@
+[submodule ".config/zed"]
+	path = .config/zed
+	url = https://github.com/uvxdotdev/zed.git
